@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+      <script>
+          for(var cont; cont < 5; cont++){
+              let idade = parseFloat(prompt("Digite sua idade"))
+              if(idade > 18){
+                  console.log("Já pode votar")
+              }else if(idade > 60 || idade < 18){
+                  console.log("Você não precisa votar") 
+              }
+              console.log(" idades informadas", idade) 
+          }
+     </script>
+  </body>
+</html>
