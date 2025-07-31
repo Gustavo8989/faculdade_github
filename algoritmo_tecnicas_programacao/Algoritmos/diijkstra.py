@@ -6,7 +6,7 @@ arestas (tempos de viagem) mudam constantemente devido às condições do tráfe
 import random
 
 def trafego():
-    vertises = ['A', 'B', 'C', 'D', 'E', 'F']
+    vertises = ['A', 'B', 'C', 'D', 'E']
     grafo = {}
     grafo["A"] = {}
     grafo["B"] = {}
@@ -20,8 +20,11 @@ def trafego():
     grafo["D"]["F"] = 7
     grafo["C"]["E"] = 9
     grafo["E"]["F"] = 4 
-    print(grafo)
-    
-    contra_tempo = {random.choice(vertises):random.randint(20,40)} # Definindo o contra-tempo com valores
+    # contra_tempo["Vertice"]["Aresta"]
+    vertises_sorteados = random.sample(vertises,2) 
+    arestas_sorteadas = grafo[vertises_sorteados[0]] 
+    teste = [arestas_sorteadas[ch] for ch in arestas_sorteadas]
+    contra_tempo = teste + [random.randint(20,30)] # Definindo o contra-tempo com valores
 
+    
 trafego()
