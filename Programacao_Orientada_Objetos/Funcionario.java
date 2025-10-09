@@ -19,8 +19,7 @@ public class Funcionario {
         return this.nome;
     }
 
-    public void calcSalario(){
-        double salario;
+    public void calcSalario(double salario){
         System.out.println("Salario do " + this.nome + " é de " + salario);
     }
 }

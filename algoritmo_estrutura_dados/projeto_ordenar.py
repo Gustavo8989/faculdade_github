@@ -22,8 +22,6 @@ class Produto:
         tamanho = len(self.table)
 
 
-
-
 produto = [] 
 valores = []
 data = []
