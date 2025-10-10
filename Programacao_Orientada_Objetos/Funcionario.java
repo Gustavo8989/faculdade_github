@@ -1,7 +1,6 @@
 package Programacao_Orientada_Objetos;
-
-
 import java.util.Date;
+import java.time.LocalDate;
 
 public class Funcionario {
     private int matricula;
@@ -9,17 +8,29 @@ public class Funcionario {
     private Date dataNecimento;
     private String cpf;
     private String endereco;
-    private String cidade;
+    private String cidade; 
 
-    public void setNome(String nome){
+    public void setData(String nome, int matricula, LocalDate dataNecimento, String cpf, String endereco, String cidade ){
         this.nome = nome;
+        this.matricula = matricula;
+        this.dataNecimento = dataNecimento;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.cidade = cidade;
     }
 
-    public String getNome(){
-        return this.nome;
+    public String getData(){
+        return nome;
     }
-
-    public void calcSalario(double salario){
-        System.out.println("Salario do " + this.nome + " é de " + salario);
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+               "nome='" + nome + '\'' +
+               ", matricula='" + matricula + '\'' +
+               ", Endereço='" + endereco + '\'' +
+               ", dataNascimento=" + dataNecimento +
+               ", cpf='" + cpf + '\'' +
+               ", cidade='" + cidade + '\'' +
+               '}';
     }
 }
