@@ -20,7 +20,12 @@ class Produto:
 
   #Algoritmo de Bubble Sort com os dados organizados em ordem cresente
     def bubble_sort(self):
-        tamanho = len(self.table)
+        # Passar por todos os dados da data 
+        data = self.table["Data"]
+        tamanho = len(data)
+        for c in data:
+            for j in range(0,tamanho-c-1):
+                print(j)
 
     def get_info(self):
         print(self.table)
@@ -33,7 +38,6 @@ data = []
 avaliacao = [] 
 categoria_ = [f"Categoria {c+1}" for c in range(20)]
 categoria = []
-#random_number = [c for c in range(100) categoria.append(f"Categoria {c}")]
 
 for c in range(1000):
     ano = random.randint(2020,2025)
@@ -46,4 +50,4 @@ for c in range(1000):
     categoria.append(random.choice(categoria_))
 
 teste = Produto(produto,valores,avaliacao,data,categoria)
-teste.get_info()
+teste.bubble_sort()
