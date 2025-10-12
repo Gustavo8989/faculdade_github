@@ -11,21 +11,27 @@ class Produto:
         self.avaliacao = avaliacao 
         self.data_adicao = data_adicao 
         self.categoria = categoria 
-        self.table = {"Data": data_adicao,
-                     "Produto":produto,
-                     "Preço":preco,
-                     "Categoria":categoria,
-                     "Avaliação":avaliacao}
+        dados = {"Data": self.data_adicao,
+                     "Produto":self.produto,
+                     "Preço":self.preco,
+                     "Categoria":self.categoria,
+                     "Avaliação":self.avaliacao}
+        self.table = pd.DataFrame(dados)
 
-    #Algoritmo de Bubble Sort com os dados organizados em ordem cresente
+  #Algoritmo de Bubble Sort com os dados organizados em ordem cresente
     def bubble_sort(self):
         tamanho = len(self.table)
+
+    def get_info(self):
+        print(self.table)
+
 
 
 produto = [] 
 valores = []
 data = []
 avaliacao = [] 
+categoria_ = [f"Categoria {c+1}" for c in range(20)]
 categoria = []
 #random_number = [c for c in range(100) categoria.append(f"Categoria {c}")]
 
@@ -37,7 +43,7 @@ for c in range(1000):
     valores.append(round(random.uniform(0,1000),2))
     data.append(datetime(ano,mes,dia))
     avaliacao.append(random.randint(0,5))
-    if c < 20:
-        categoria.append(f"Categoria {c}")
+    categoria.append(random.choice(categoria_))
 
-teste = Produto(produto,valores,data,categoria,avaliacao)
+teste = Produto(produto,valores,avaliacao,data,categoria)
+teste.get_info()
