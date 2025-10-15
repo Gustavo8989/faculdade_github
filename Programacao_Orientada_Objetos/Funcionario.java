@@ -10,10 +10,10 @@ public class Funcionario {
     private String endereco;
     private String cidade; 
 
-    public void setData(String nome, int matricula, LocalDate dataNecimento, String cpf, String endereco, String cidade ){
+    public void setData(String nome, int matricula, String cpf, String endereco, String cidade ){
         this.nome = nome;
         this.matricula = matricula;
-        this.dataNecimento = dataNecimento;
+        //this.dataNecimento = dataNecimento;
         this.cpf = cpf;
         this.endereco = endereco;
         this.cidade = cidade;
@@ -28,7 +28,6 @@ public class Funcionario {
                "nome='" + nome + '\'' +
                ", matricula='" + matricula + '\'' +
                ", Endereço='" + endereco + '\'' +
-               ", dataNascimento=" + dataNecimento +
                ", cpf='" + cpf + '\'' +
                ", cidade='" + cidade + '\'' +
                '}';

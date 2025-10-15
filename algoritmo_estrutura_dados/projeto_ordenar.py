@@ -1,7 +1,5 @@
 from datetime import datetime
-import pandas as pd
 import random 
-import re
 
 
 class Produto:
@@ -11,43 +9,21 @@ class Produto:
         self.avaliacao = avaliacao 
         self.data_adicao = data_adicao 
         self.categoria = categoria 
-        dados = {"Data": self.data_adicao,
-                     "Produto":self.produto,
-                     "Preço":self.preco,
-                     "Categoria":self.categoria,
-                     "Avaliação":self.avaliacao}
-        self.table = pd.DataFrame(dados)
 
-  #Algoritmo de Bubble Sort com os dados organizados em ordem cresente
-    def bubble_sort(self):
-        # Passar por todos os dados da data 
-        data = self.table["Data"]
-        tamanho = len(data)
-        for c in data:
-            for j in range(0,tamanho-c-1):
-                print(j)
-
-    def get_info(self):
-        print(self.table)
+    def __repr__(self):
+        return f"{self.produto}: {self.preco}, {self.avaliacao}, {self.data_adicao}, {self.categoria}"
+   
+def gerando_dados(n):
+    nome = ["Produtos " + str(c) for c in range(n)]
+    preco = [round(random.uniform(0,1000),2) for c in range(n)]
+    avaliacao = [round(random.uniform(0,5),2) for _ in range(n)]
+    datas = [datetime.datetime.now() - datetime.timedelta(days=random.randint(0, 365)) for _ in range(n)]
+    categoria = ["Categoria: " + str(random.radint(0,5)) for c in range(n)]
+    produto = [Produto(nome[i], preco[i], avaliacao[i],datas[i],categoria[i]) for i in range(n)]
+    return produto
 
 
 
-produto = [] 
-valores = []
-data = []
-avaliacao = [] 
-categoria_ = [f"Categoria {c+1}" for c in range(20)]
-categoria = []
-
-for c in range(1000):
-    ano = random.randint(2020,2025)
-    mes = random.randint(1,12)
-    dia = random.randint(1,28)
-    produto.append(f"produto {c}")
-    valores.append(round(random.uniform(0,1000),2))
-    data.append(datetime(ano,mes,dia))
-    avaliacao.append(random.randint(0,5))
-    categoria.append(random.choice(categoria_))
-
-teste = Produto(produto,valores,avaliacao,data,categoria)
-teste.bubble_sort()
+produtos = gerando_dados(1000)
+for produto in produtos[:10:]:
+    print(produto)
