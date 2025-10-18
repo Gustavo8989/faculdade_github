@@ -3,7 +3,7 @@ import random
 
 
 class Produto:
-    def __init__(self,produto:str,preco:int,avaliacao:float,data_adicao:datetime.datetime,categoria:str):       
+    def __init__(self,data_adicao:datetime.datetime,produto:str,preco:int,avaliacao:float,categoria:str):       
         self.produto = produto 
         self.preco = preco 
         self.avaliacao = avaliacao 
@@ -23,12 +23,21 @@ def gerando_dados(n):
     produto = [Produto(datas[i],nome[i], preco[i], avaliacao[i],categoria[i]) for i in range(n)]
     return produto
 
-
 produtos = gerando_dados(1000)
-for produto in produtos:
-    print(produto)
 
-
+def visualizar():
+    for produto in produtos:
+        print(produto)
 
 def buble_sort():
+    n = len(produtos)
+    for c in range(n):
+        # Esta percorendo a lista inteira proporcional a quantidade de itens, Nesse caso a lista vai se repetir 1000 vezes 
+        for k in range(0, n-c-1):
+            # Verificando se o numero é maior ou menos
+            if produtos[k].preco > produtos[k+1].preco:
+                # Trocando de lugar
+                pass 
+
+def QuickSort():
     pass 
