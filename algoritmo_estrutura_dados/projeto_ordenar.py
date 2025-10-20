@@ -24,13 +24,13 @@ def gerando_dados(n):
     return produto
 
 produtos = gerando_dados(1000)
-
+n = len(produtos)
 def visualizar():
     for produto in produtos:
         print(produto)
 
+# Valor 
 def buble_sort():
-    n = len(produtos)
     for c in range(n):
         # Esta percorendo a lista inteira proporcional a quantidade de itens, Nesse caso a lista vai se repetir 1000 vezes 
         for k in range(0, n-c-1):
@@ -39,5 +39,17 @@ def buble_sort():
                 # Trocando de lugar
                 pass 
 
+# Avaliação
 def QuickSort():
-    pass 
+    pivo = produtos[len(produtos)//2]
+    maior = []
+    menor = []
+    for c in range(n):
+        if pivo > c:
+            menor.append(c)
+        elif pivo < c:
+            maior.append(c)
+        
+
+
+QuickSort()
