@@ -3,15 +3,15 @@ import random
 
 
 class Produto:
-    def __init__(self,data_adicao:datetime.datetime,produto:str,preco:int,avaliacao:float,categoria:str):       
+    def __init__(self,datas:datetime.datetime,produto:str,preco:int,avaliacao:float,categoria:str):       
         self.produto = produto 
         self.preco = preco 
         self.avaliacao = avaliacao 
-        self.data_adicao = data_adicao 
+        self.datas = datas 
         self.categoria = categoria 
 
     def __repr__(self):
-        return f"{self.produto}: {self.preco}, {self.avaliacao}, {self.data_adicao}, {self.categoria}"
+        return f"{self.produto}: {self.preco}, {self.avaliacao}, {self.datas}, {self.categoria}"
    
 
 def gerando_dados(n):
@@ -41,7 +41,7 @@ def buble_sort():
 
 # Avaliação
 def QuickSort():
-    pivo = produtos[len(produtos)//2]
+    pivo = int(len(produtos)) // 2
     maior = []
     menor = []
     for c in range(n):
@@ -49,7 +49,13 @@ def QuickSort():
             menor.append(c)
         elif pivo < c:
             maior.append(c)
+    # Modificar a lista produtos 
         
+def MargeSort():
+    teste = []
+    for c in range(n):
+        teste.append(produtos[c].datas)
+        for k in range(0,n-c-1):
+            teste[:k]
 
-
-QuickSort()
+MargeSort()
