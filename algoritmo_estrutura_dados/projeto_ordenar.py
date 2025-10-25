@@ -50,12 +50,14 @@ def QuickSort():
         elif pivo < c:
             maior.append(c)
     # Modificar a lista produtos 
-        
+
+# Data
 def MargeSort():
-    teste = []
-    for c in range(n):
-        teste.append(produtos[c].datas)
-        for k in range(0,n-c-1):
-            teste[:k]
+    # Separar a lista em varias partes menores até ficar com os valores unicos 
+    meio = n // 2
+    for datas in produtos:
+        datas = datas.datas
+
+
 
 MargeSort()
