@@ -4,6 +4,7 @@ class BSTNode(object):
         self.value = value
         self.left = left 
         self.right = right
+        
 
 root = BSTNode(42) 
 root.left = BSTNode(10)

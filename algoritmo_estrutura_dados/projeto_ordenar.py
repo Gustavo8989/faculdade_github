@@ -55,8 +55,7 @@ def QuickSort():
 def MargeSort():
     # Separar a lista em varias partes menores até ficar com os valores unicos 
     meio = n // 2
-    for datas in produtos:
-        datas = datas.datas
+    data = produtos.datas 
 
 
 
