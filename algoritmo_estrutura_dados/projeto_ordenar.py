@@ -52,11 +52,32 @@ def QuickSort():
     # Modificar a lista produtos 
 
 # Data
-def MargeSort():
+def MargeSort(key=lambda x:x):
     # Separar a lista em varias partes menores até ficar com os valores unicos 
     meio = n // 2
-    data = produtos.datas 
+    esquerda = MargeSort(produtos[:meio])
+    direita = MargeSort(produtos[meio:])
+    #Mesclando 
+    resultado =[]
+    i = j = 0
+    while i < len(esquerda) and j < len(direita):
+        if key(esquerda[i] <= key(direita[i])):
+            resultado.append(esquerda[i])
+            i += 1 
+        else:
+            resultado.append(direita[i])
+            j += 1 
+
+    resultado.extend(esquerda[i:])
+    resultado.extend(direita[j:]) 
+    return resultado 
 
 
 
-MargeSort()
+# Categoria 
+
+def HeapSort():
+    # Array de entrada é transformado em um Max-Heap 
+
+
+    # Fase de ordenação por seleção (Sorting) 
