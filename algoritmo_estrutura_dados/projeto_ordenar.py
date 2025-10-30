@@ -37,19 +37,25 @@ def buble_sort():
             # Verificando se o numero é maior ou menos
             if produtos[k].preco > produtos[k+1].preco:
                 # Trocando de lugar
-                pass 
+                 produtos[k], produtos[k+1] = produtos[k+1],produtos[k]
 
 # Avaliação
 def QuickSort():
     pivo = int(len(produtos)) // 2
     maior = []
     menor = []
+    result = []
     for c in range(n):
         if pivo > c:
             menor.append(c)
         elif pivo < c:
             maior.append(c)
     # Modificar a lista produtos 
+        result = menor + maior
+        produtos[c][1] = result
+
+
+
 
 # Data
 def MargeSort(key=lambda x:x):
@@ -78,6 +84,9 @@ def MargeSort(key=lambda x:x):
 
 def HeapSort():
     # Array de entrada é transformado em um Max-Heap 
+    pass 
 
+    # Fase de ordenação por seleção (Sorting)
+    print("")
 
-    # Fase de ordenação por seleção (Sorting) 
+print(produtos[1])
