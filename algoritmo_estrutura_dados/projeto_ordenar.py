@@ -55,8 +55,6 @@ def QuickSort():
         produtos[c][1] = result
 
 
-
-
 # Data
 def MargeSort(key=lambda x:x):
     # Separar a lista em varias partes menores até ficar com os valores unicos 
@@ -81,12 +79,27 @@ def MargeSort(key=lambda x:x):
 
 
 # Categoria 
-
+lista = produtos
 def HeapSort():
-    # Array de entrada é transformado em um Max-Heap 
-    pass 
+    maior = i
+    esquerda = 2 * i + 1
+    direita = 2 * i + 2
+    if esquerda < n and key(lista[esquerda]) > key(lista[maior]):
+        maior = esquerda
+    if direita < n and key(lista[direita]) > key(lista[maior]):
+        maior = direita
+    if maior != i:
+        lista[i], lista[maior] = lista[maior], lista[i]
+        heapify(lista, n, maior, key)
 
-    # Fase de ordenação por seleção (Sorting)
-    print("")
+
+def heap_sort(lista, key=lambda x: x):
+    n = len(lista)
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(lista, n, i, key)
+    for i in range(n - 1, 0, -1):
+        lista[i], lista[0] = lista[0], lista[i] 
+        heapify(lista, i, 0, key)
+    return lista
 
 print(produtos[1])

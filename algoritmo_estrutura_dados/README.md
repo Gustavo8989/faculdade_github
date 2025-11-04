@@ -23,4 +23,6 @@ Heap Sort -> Uma árvore binaria quase completa organizada de maneira expecífic
     O maior elemento (que esta na raiz do Max_Heap) é trocado com o último elemento do heap não ordenado 
     O tamanho do heap é reduzido em 1 (o ultimo elemnto trocado está agora em sua posição final ordenada) 
     O novo elemento raiz é empurrado para baixo (processo chamado de Heapify para restaurar a propriedade de Max_Heap na subestrutura restante 
-    Esse processo se repete até que o tamanho de heap seja 1 
+    Esse processo se repete até que o tamanho de heap seja 1
+
+# https://colab.research.google.com/drive/10R3EV77L3aG2rUE-kHNAjbWQzgolJsDe?usp=sharing
