@@ -33,7 +33,14 @@ public class exercicio{
         tela.getContentPane().add(pn2,BorderLayout.CENTER);
 
         JPanel pn3 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        pn3.add(new JButton("Salvar"));
+        JButton salvar = new JButton("Salvar");
+        salvar.addActionListener(new ActionListener);
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.out.println("Usuario clicou no botao de salvar");
+
+        }
+        pn3.add(salvar);
         pn3.add(new JButton("Alterar"));
         pn3.add(new JBUtton("Cancelar"));
         tela.getContentPane().add(pn3,BorderLayout.SOUTH);
